@@ -39,10 +39,32 @@ public class Main {
 
 
     }
+    public static void soutString (int[][] array, int string) {
+
+        System.out.println("Elements of string with max sum ("+(string+1)+"):");
+        System.out.println(Arrays.toString(array[string]));
+    }
+    public static void task3 (int [][]array){
+        int maxSum =0;
+        int sumString =0;
+        int indexMaxString = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++){
+                sumString+=array[i][j];
+            }
+            if (sumString>maxSum) {
+                maxSum=sumString;
+                indexMaxString=i;
+            }
+            sumString=0;
+        }
+        soutString(array,indexMaxString);
+    }
 
     public static void main(String[] args) {
-        int n = (int) (Math.random() * 8 + 2);
-        int m = (int) (Math.random() * 5 + 5);
+        int n = (int) (Math.random() * 5+ 5);
+        int m = (int) (Math.random() * 5 +5);
 
         int[][] array = new int[n][m];
         for (int i = 0; i < array.length; i++) {
@@ -51,10 +73,14 @@ public class Main {
             }
         }
         soutArray(array, n, m);
-        task1(array);
+        //task1(array);
         int numStringForSout = 5;
         int numColumnForSout = 2;
-        task2(array, numStringForSout, numColumnForSout);
+        //task2(array, numStringForSout, numColumnForSout);
+        task3(array);
+
+
+
     }
 
 }

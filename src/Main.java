@@ -122,13 +122,14 @@ public class Main {
 
 
     public static void main(String[] args) {
-        int quantityString = (int) (Math.random() * 5 + 5);
-        int quantityColumn = (int) (Math.random() * 5 + 5);
+        //random array size height*width with integer number between minOfDiapason : maxOfDiapason
+        int height = (int) (Math.random() * 5 + 5);
+        int width = (int) (Math.random() * 5 + 5);
         int minOfDiapason = (int) (Math.random() * -100);
         int maxOfDiapason = (int) (Math.random() * 100);
-        int[][] array = new int[quantityString][quantityColumn];
-        //randomArray(quantityString, quantityColumn, minOfDiapason, maxOfDiapason);
-        //System.out.println("Random array " + quantityString + "*" + quantityColumn + ":");
+        int[][] array = new int[height][width];
+        //randomArray(height, width, minOfDiapason, maxOfDiapason);
+        //System.out.println("Random array " + height + "*" + width + ":");
         //soutArray(array);
         //task1(array);
         int numStringForSout = 5;

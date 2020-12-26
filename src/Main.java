@@ -14,9 +14,9 @@ public class Main {
         return randomArray;
     }
 
-    public static void soutArray(int[][] array, int n, int m) {
+    public static void soutArray(int[][] array) {
 
-        System.out.println("Random array " + n + "*" + m + ":");
+
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
@@ -83,21 +83,56 @@ public class Main {
         }
         return sumArray;
     }
+    public static int[][] task5 ( int string, int column, int min, int max) {
+
+        int[][] array = new int[string][column];
+        /*int[] arrayFullNum = new int [string*column];
+        array[0][0]=min+(int)(Math.random()*(max-min)-1);
+        int count =0;
+        arrayFullNum[count]=array[0][0];
+        count++;
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                int random= min+(int)(Math.random()*(max-min+1));
+
+                for (int k =0; k < arrayFullNum.length; k++) {
+                    if (random!=arrayFullNum[k]) continue;
+                }
+                if (i==0 && j==0) continue;
+                do {
+                    ;
+                } while ();
+
+
+                array[i][j] = min+(int)(Math.random()*(max-min+1));
+                arrayFullNum[count]=array[i][j];
+                count++;
+            }
+
+        }*/
+
+        return array;
+    }
+
 
     public static void main(String[] args) {
-        int quantityString = (int) (Math.random() * 2+ 1);
-        int quantityColumn = (int) (Math.random() * 2 +2);
+        int quantityString = (int) (Math.random() * 5+ 5);
+        int quantityColumn = (int) (Math.random() * 5 +5);
         int minOfDiapason = (int) (Math.random() * -1);
-        int maxOfDiapason = (int) (Math.random() * 10);
+        int maxOfDiapason = (int) (Math.random() * 150);
         int [][] array=randomArray(quantityString,quantityColumn, minOfDiapason,maxOfDiapason);
-        soutArray(array, quantityString, quantityColumn);
-        //task1(array);
+        System.out.println("Random array " + quantityString + "*" + quantityColumn + ":");
+        soutArray(array);
+        task1(array);
         int numStringForSout = 5;
         int numColumnForSout = 2;
-        //task2(array, numStringForSout, numColumnForSout);
-        //task3(array);
+        task2(array, numStringForSout, numColumnForSout);
+        task3(array);
         // Task4 массив случайных чисел создавался для всех задач
         System.out.println("Summ of array: "+task4(array));
+        int[][] arrayTaskFive = task5(quantityString,quantityColumn,minOfDiapason,maxOfDiapason);
+        soutArray(arrayTaskFive);
     }
 
 }
